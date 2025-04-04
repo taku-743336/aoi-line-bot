@@ -29,7 +29,7 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def get_openai_reply(user_text):
-    print(゛タイプチェック：゛,type(user_text))
+    print("タイプチェック:", type(user_text))
     assert isinstance(user_text, str), f"user_text is NOT str: {type(user_text)}"
     response = openai.ChatCompletion.create(
     model="gpt-3.5-turbo",
