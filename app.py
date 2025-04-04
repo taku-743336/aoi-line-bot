@@ -34,7 +34,7 @@ def get_openai_reply(user_text):
     {"role": "user", "content": user_text}
 ]
 )
-return response["choices"][0]["message"]["content"]
+    return response["choices"][0]["message"]["content"]
 def handle_message(event):
     user_msg = event.message.text
     reply_text = get_openai_reply(user_msg)
