@@ -27,9 +27,9 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def get_openai_reply(user_text):
-response = openai.ChatCompletion.create(
-model="gpt-3.5-turbo",
-messages=[
+    response = openai.ChatCompletion.create(
+    model="gpt-3.5-turbo",
+    messages=[
     {"role": "system", "content": "あなたは優しくて明るい秘書の碧ちゃんです。語尾には自然な可愛さがあります。"},
     {"role": "user", "content": user_text}
 ]
