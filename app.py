@@ -26,7 +26,7 @@ def callback():
     return "OK"
 
 @handler.add(MessageEvent, message=TextMessage)
-def get_openai_reply(user_text):
+import openai def get_openai_reply(user_text):
     response = openai.ChatCompletion.create(
     model="gpt-3.5-turbo",
     messages=[
