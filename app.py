@@ -2,7 +2,8 @@ from flask import Flask, request, abort
 from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
 from linebot.models import MessageEvent, TextMessage, TextSendMessage
-import os
+
+import openai
 
 app = Flask(__name__)
 
@@ -26,7 +27,7 @@ def callback():
     return "OK"
 
 @handler.add(MessageEvent, message=TextMessage)
-import openai def get_openai_reply(user_text):
+def get_openai_reply(user_text):
     response = openai.ChatCompletion.create(
     model="gpt-3.5-turbo",
     messages=[
